@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:5500/calculator.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="./calculator_files/calculator.js.download"></script>
+    <style>@media screen and (min-width:100px) and (max-width:480px){
+        body {
+            background: orchid;
+        }
+        }
+        @media screen and (min-width:481px) and (max-width:768px){
+            body {
+                background: orangered;
+            }
+            }   
+            @media screen and (min-width:769px) and (max-width:1024px){
+                body {
+                    background: blue;
+                }
+                }
+                @media screen and (min-width:1025px) and (max-width:1200px){
+                    body {
+                        background: skyblue;
+                    }
+                    }
+                    @media screen and (min-width:1201px) and (max-width:2064px){
+                        body {
+                            background: yellow;
+                        }
+                        }
+        .calculator
+        {
+            width: 50%;
+            margin: auto;
+            border: 10px solid grey;
+            border-radius: 10px;
+            
+        }
+        .caption
+        {
+            
+            width: 98%;
+            height: 55px;
+            padding: 5px;
+            background-color: orangered;
+            color: white;
+            text-align: center;
+        }
+        .input
+        {
+            width: 100%;
+            height: 50px;
+            background-color: whitesmoke;
+            color: black;
+        }
+        .output
+        {
+            width: 100%;
+            height: 50px;
+            background-color: green;
+            color: white;
+            margin-bottom: 2px;
+        
+            
+        }
+        .buttons
+        {
+            display: grid;
+            grid-template-columns:  auto auto auto auto;
+            background-color: black;
+            gap: 8px;
+            margin: 0px;
+            
+        }
+        .buttons div button
+        {
+            width: 100%;
+            height: 70px;
+            background-color: cornflowerblue;
+            border: 5px solid rgb(72, 195, 200);
+            padding: 5px;
+            color: white;
+            font-size: large;  
+            border-radius: 15px; 
+        
+        }
+        .buttons div button:hover
+        {
+            background-color:rgb(243, 118, 73);
+            color: white;
+        }
+        footer
+        {
+            width: auto;
+            height: 30px;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+        }
+        }</style>
+        <script>function pressNumberKey(value)
+            {
+            document.getElementById("input").innerText+=value;
+            document.getElementById("output").innerText=eval(document.getElementById("input").innerText);
+            }
+            
+            function Erase()
+            {
+               
+                var input=document.getElementById("input");
+                var output=document.getElementById("output");
+                input.innerText="";
+                output.innerText="";
+            
+            }
+            
+            function backspace() { 
+                var b = document.getElementById("input").innerHTML; 
+                scr = b.substring(0, b.length - 1); 
+                document.getElementById("input").innerHTML = scr; 
+                var b = document.getElementById("output").innerHTML; 
+                scr = b.substring(0, b.length - 1); 
+                document.getElementById("output").innerHTML = scr; 
+            }
+            </script>
+<link rel="stylesheet" href="./calculator_files/calculator.css"></head>
+<body>
+    <div class="calculator">
+        <div class="caption">
+            <div class="marquee"> 
+                <marquee behavior="alternate" scrollamount="5"><h2>Welcome To My Calculator</h2> 
+                </marquee></div></div>
+        <div class="input" id="input"></div>
+        <div class="output" id="output"></div>
+        <div class="buttons">
+            <div> <button onclick="pressNumberKey(1)">1</button></div>
+            <div> <button onclick="pressNumberKey(2)">2</button></div>
+            <div> <button onclick="pressNumberKey(3)">3</button></div>
+            <div> <button onclick="Erase()">AC</button></div>
+            <div> <button onclick="pressNumberKey(4)">4</button></div>
+            <div> <button onclick="pressNumberKey(5)">5</button></div>
+            <div> <button onclick="pressNumberKey(6)">6</button></div>
+            <div> <button onclick="backspace()">C</button></div>
+            <div> <button onclick="pressNumberKey(7)">7</button></div>
+            <div> <button onclick="pressNumberKey(8)">8</button></div>
+            <div> <button onclick="pressNumberKey(9)">9</button></div>
+            <div> <button onclick="pressNumberKey(&#39;+&#39;)">+</button></div>
+            <div> <button onclick="pressNumberKey(&#39;.&#39;)">.</button></div>
+            <div> <button onclick="pressNumberKey(0)">0</button></div>
+            <div> <button>=</button></div>
+            <div> <button onclick="pressNumberKey(&#39;-&#39;)">-</button></div>
+            <div> <button onclick="pressNumberKey(&#39;*&#39;)">*</button></div>
+            <div> <button onclick="pressNumberKey(&#39;/&#39;)">/</button></div>
+            <div> <button onclick="pressNumberKey(&#39;%&#39;)">%</button></div>
+            <div> <button onclick="pressNumberKey(&#39;00&#39;)">00</button></div>
+        </div>
+        <footer>Designed by Neelmani Trivedi
+
+        </footer>
+    </div>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
